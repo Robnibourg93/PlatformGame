@@ -16,7 +16,6 @@ public class OrbitCollectible : MonoBehaviour
     {
         center = this.transform.parent;
         transform.position = (transform.position - center.position).normalized * radius + center.position;
-        radius = 2.0f;
     }
 
     void Update()
