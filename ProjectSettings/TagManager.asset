@@ -14,8 +14,7 @@ TagManager:
   - Wall Jump
   - Spawn
   - HealthLabel
-  - Cube
-  - Collectible
+  - OrbitOrbCollectible
   layers:
   - Default
   - TransparentFX
