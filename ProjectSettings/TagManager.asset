@@ -15,6 +15,7 @@ TagManager:
   - Spawn
   - HealthLabel
   - Cube
+  - Collectible
   layers:
   - Default
   - TransparentFX

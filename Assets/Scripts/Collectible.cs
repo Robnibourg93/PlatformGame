@@ -12,4 +12,19 @@ public class Collectible : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnTriggerEnter(Collider c)
+    {
+        if (c.tag == "Player")
+        {
+            foreach (GameObject child in GameObject.FindGameObjectsWithTag("OrbitOrbCollectible")){
+                if (!child.GetComponent<OrbitCollectible>().pickedUp)
+                {
+                    child.GetComponent<OrbitCollectible>().pickedUp = true;
+                    Destroy(this.gameObject);
+                }
+            }
+
+        }
+    }
 }

@@ -211,9 +211,10 @@ GameObject:
   - 33: {fileID: 175400603}
   - 135: {fileID: 175400602}
   - 23: {fileID: 175400601}
+  - 114: {fileID: 175400605}
   m_Layer: 0
-  m_Name: Collectible
-  m_TagString: Untagged
+  m_Name: Center
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,7 +250,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 175400600}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .5
@@ -268,15 +269,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 175400600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.78999996, z: 0}
+  m_LocalPosition: {x: 79.6843414, y: 15.8905649, z: -58.5956688}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1344986743}
-  - {fileID: 1543669558}
-  - {fileID: 1916995786}
-  - {fileID: 1286603018}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Children: []
+  m_Father: {fileID: 402927942}
+  m_RootOrder: 0
+--- !u!114 &175400605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 175400600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17f73820a0fe684fba86c7ed87ca016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveToPlayerSpeed: .310000002
 --- !u!1 &266508491
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +359,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!1 &402927941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 402927942}
+  m_Layer: 0
+  m_Name: Collectible
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &402927942
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402927941}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -79.6843414, y: -9.10056496, z: 58.5956688}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 175400604}
+  - {fileID: 1344986743}
+  - {fileID: 1543669558}
+  - {fileID: 1916995786}
+  - {fileID: 1286603018}
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
 --- !u!1 &427298712
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +738,7 @@ GameObject:
   - 23: {fileID: 1286603020}
   - 114: {fileID: 1286603019}
   m_Layer: 0
-  m_Name: Sphere (4)
+  m_Name: OrbitSphereCollectible-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,11 +751,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1286603017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 79.6843414, y: 16.890564, z: -58.5956688}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children: []
-  m_Father: {fileID: 175400604}
-  m_RootOrder: 3
+  m_Father: {fileID: 402927942}
+  m_RootOrder: 4
 --- !u!114 &1286603019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +773,8 @@ MonoBehaviour:
   radius: 1
   radiusSpeed: .5
   rotationSpeed: 80
+  MoveToPlayerSpeed: 1
+  pickedUp: 0
 --- !u!23 &1286603020
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -861,7 +904,7 @@ GameObject:
   - 23: {fileID: 1344986745}
   - 114: {fileID: 1344986744}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: OrbitSphereCollectible-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -874,11 +917,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1344986742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 79.6843414, y: 14.8905649, z: -58.5956688}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children: []
-  m_Father: {fileID: 175400604}
-  m_RootOrder: 0
+  m_Father: {fileID: 402927942}
+  m_RootOrder: 1
 --- !u!114 &1344986744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +939,8 @@ MonoBehaviour:
   radius: 1
   radiusSpeed: .5
   rotationSpeed: 80
+  MoveToPlayerSpeed: 1
+  pickedUp: 0
 --- !u!23 &1344986745
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -952,7 +997,7 @@ GameObject:
   - 23: {fileID: 1543669560}
   - 114: {fileID: 1543669559}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: OrbitSphereCollectible-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -965,11 +1010,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543669557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 80.6843414, y: 15.8905649, z: -58.5956688}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children: []
-  m_Father: {fileID: 175400604}
-  m_RootOrder: 1
+  m_Father: {fileID: 402927942}
+  m_RootOrder: 2
 --- !u!114 &1543669559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,6 +1032,8 @@ MonoBehaviour:
   radius: 1
   radiusSpeed: .5
   rotationSpeed: 80
+  MoveToPlayerSpeed: 1
+  pickedUp: 0
 --- !u!23 &1543669560
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1275,7 +1322,7 @@ GameObject:
   - 23: {fileID: 1916995783}
   - 114: {fileID: 1916995782}
   m_Layer: 0
-  m_Name: Sphere (3)
+  m_Name: OrbitSphereCollectible-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1298,6 +1345,8 @@ MonoBehaviour:
   radius: 1
   radiusSpeed: .5
   rotationSpeed: 80
+  MoveToPlayerSpeed: 1
+  pickedUp: 0
 --- !u!23 &1916995783
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1348,11 +1397,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1916995781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: 78.6743393, y: 15.8905649, z: -58.5956688}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children: []
-  m_Father: {fileID: 175400604}
-  m_RootOrder: 2
+  m_Father: {fileID: 402927942}
+  m_RootOrder: 3
 --- !u!1 &1944418893
 GameObject:
   m_ObjectHideFlags: 0
