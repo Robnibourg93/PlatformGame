@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class OrbitCollectible : MonoBehaviour
@@ -12,7 +13,9 @@ public class OrbitCollectible : MonoBehaviour
     public float radius = 0.6f;
     public float radiusSpeed = 0.5f;
     public float rotationSpeed = 80.0f;
-    public float MoveToPlayerSpeed = 1f;
+    public float currentSpeed;
+    public float acceleration = 45f; 
+    public float targetSpeed = 15f;
 
     private Vector3 playerPos;
     private Vector3 posIncrement = new Vector3(0f, 1.7f, 0f);
@@ -47,12 +50,27 @@ public class OrbitCollectible : MonoBehaviour
 
             //increase y position so small orbs hit the body of the player
             playerPos = player.transform.position + posIncrement;
+            currentSpeed = incrementTowards(currentSpeed, targetSpeed, acceleration);
+            Debug.Log(currentSpeed);
             //move small orbs
-            transform.position = Vector3.MoveTowards(transform.position, playerPos, MoveToPlayerSpeed *Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, playerPos, currentSpeed *Time.deltaTime);
             //if position of the orb is equal to player position destroy this GameObject.
             if (playerPos == transform.position) {
                 Destroy(this.gameObject);
             }
+        }
+    }
+    private float incrementTowards(float n, float target, float a)
+    {
+
+        if (n == target)
+        {
+            return n;
+        }
+        else {
+            float dir = Mathf.Sign(target - n);
+            n += a * Time.deltaTime * dir;
+            return (dir == Mathf.Sign(target - n)) ? n : target;
         }
     }
 }

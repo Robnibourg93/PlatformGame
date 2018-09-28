@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
@@ -39,6 +40,10 @@ public class GameManager : MonoBehaviour {
 
     public void SetCheckpoint(Vector3 cp) {
         checkpoint = cp;
+    }
+
+    public void CreatePuzzle(List<GameObject> puzzleComponents) {
+
     }
 
     public void EndLevel()
